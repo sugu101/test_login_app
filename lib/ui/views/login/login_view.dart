@@ -38,10 +38,11 @@ class LoginView extends StatelessWidget {
                       validator: (val) => val == null || val.isEmpty ? 'Email is required' : null,
                       onSaved: (val) => viewModel.setEmail(val!),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 18),
                     StatefulBuilder(
                       builder: (context, setState) => TextFormField(
                         obscureText: !_isPasswordVisible,
+                        keyboardType: TextInputType.visiblePassword,
                         decoration: InputDecoration(
                           hintText: "Enter your password",
                           labelText: "Password",
